@@ -1,0 +1,321 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #003366; /* Ocean Blue */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #003366; /* Dark blue background */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    border-bottom: 1px solid #003366; /* Optional: to match background */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif; /* You can use any web-safe font or add custom fonts */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar ul li a:hover {
+    color: #8400ff; /* Gold color on hover */
+}
+
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Home section */
+#home {
+    height: 100vh;
+    background: linear-gradient(to bottom, #003366, #004080); /* Gradient dari Biru Tua ke Biru Lebih Terang */
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-content {
+    background-color: rgba(0, 183, 255, 0.3);
+    padding: 50px;
+    border-radius: 10px;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    transform: translateY(-100%);
+    animation: slideDown 1s forwards;
+}
+
+
+.foto img {
+    max-width: 500px; /* Ukuran gambar yang lebih kecil */
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Sudut bulat pada gambar */
+    transform: translateY(-100%);
+    animation: slideDown 1s forwards;
+}
+
+.ucapan-box {
+    background-color: #fff3ac;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 700px;
+    margin-left: 700px;
+    animation: popUp 2s forwards;
+}
+
+.ucapan{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+/* Word Section */
+#word {
+    padding: 100px 20px; /* Adjust padding to fit your design */
+    background: linear-gradient(to bottom, #004080, #0066cc); /* Gradient from dark blue to light blue */
+    color: #ffffff; /* White text color for contrast */
+    text-align: center;
+}
+
+.word-content {
+    background-color: rgba(0, 0, 0, 0.3); /* Optional: semi-transparent background for better text visibility */
+    padding: 50px;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+.kata2-box {
+    background-color: #ffff99; /* Warna kuning untuk kotak di Word Section */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 500px;
+    margin-right: 500px;
+    max-height: 200px; /* Tinggi maksimum kotak */
+    overflow-y: auto; /* Memungkinkan scrolling secara vertikal */
+}
+
+.kata2-text {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Memories Section */
+#memories {
+    padding: 100px 20px; /* Adjust padding to fit your design */
+    background: linear-gradient(to bottom, #0066cc, #b3d9ff); /* Gradient from light blue to lighter blue */
+    color: #000000; /* Black text color for contrast */
+    text-align: center;
+}
+
+.kotakfoto {
+    background-color: #1532d6;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.image-slider {
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.image-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-container img {
+    width: calc(33.33% - 10px); /* Mengurangi margin dari lebar total */
+    flex-shrink: 0;
+    margin: 0 5px; /* Menambahkan margin antara gambar */
+    height: auto;
+    user-select: none;
+}
+#home, #word, #memories {
+    margin: 0; /* Ensure no margin between sections */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-content, .word-content, .kata2-box, .ucapan-box, .kotakfoto {
+        padding: 20px;
+        margin: 100px 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .navbar ul li a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .ucapan-box, .kata2-box {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .image-container img {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content, .word-content, .kata2-box, .ucapan-box, .kotakfoto {
+        padding: 10px;
+        margin: 10px 5px;
+    }
+
+    .navbar ul {
+        gap: 5px;
+    }
+
+    .navbar ul li a {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .image-container img {
+        width: calc(100% - 100px);
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
+
+/* Media Queries untuk Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .home-content, .word-content, .kata2-box, .ucapan-box, .kotakfoto {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .navbar ul li a {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+
+    .ucapan-box, .kata2-box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-container img {
+        width: calc(50% - 10px); /* Menyesuaikan gambar agar lebih kecil pada tablet */
+    }
+}
+
+/* Media Queries untuk iPad 9 (Portrait) */
+@media (min-width: 810px) and (max-width: 1080px) {
+    .home-content, .word-content, .kata2-box, .ucapan-box, .kotakfoto {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .navbar ul li a {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+
+    .ucapan-box, .kata2-box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-container img {
+        width: calc(50% - 10px); /* Menyesuaikan gambar agar lebih kecil pada tablet */
+    }
+}
