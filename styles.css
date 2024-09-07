@@ -220,6 +220,15 @@ h1 {
         padding: 20px;
         margin: 100px 10px;
     }
+    
+    .home-content {
+        margin-top: 500px;
+        font-size: 10px;
+    }
+
+    .word-content {
+        margin-top: 300px;
+    }
 
     .navbar ul {
         flex-direction: column;
